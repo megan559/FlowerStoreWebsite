@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    
+    .header {
+            width: 100%;
+            background: rgba(94, 40, 40, 0.7); 
+            backdrop-filter: blur(5px); 
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: none;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 1s forwards 0.5s;
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            color: white; 
+            padding: 10px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLogo 1s forwards 1s;
+        }
+
+        @keyframes slideInLogo {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            margin-right: 100px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: rgb(254, 254, 254);
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s;
+            font-family: 'Times New Roman', Times, serif;
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        .menu a:nth-child(1) { animation: slideInMenu 1s forwards 0.8s; }
+        .menu a:nth-child(2) { animation: slideInMenu 1s forwards 1s; }
+        .menu a:nth-child(3) { animation: slideInMenu 1s forwards 1.2s; }
+        .menu a:nth-child(4) { animation: slideInMenu 1s forwards 1.4s; }
+        .menu a:nth-child(5) { animation: slideInMenu 1s forwards 1.6s; }
+
+        @keyframes slideInMenu {
+            0% { transform: translateY(-30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .menu a:hover {
+            color: #d4af37; 
+            transform: scale(1.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUpIframe 1s forwards 1.5s;
+        }
+
+        @keyframes slideUpIframe {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+</style>
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="./assets/flowers.mp4" type="video/mp4">
+    </video>
+  <div class="wrapper">
+    <form action="">
+        <h1>Register Now!</h1>
+        <div class="input-box">
+<input type="text" placeholder="username" required>
+<i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="Checkbox">Remember me</label>
+                        <a href="#"> Suggest strong password?</a>
+                    </div>
+                    <button type="submit" class="btn" style="color: white; font-family: 'Times New Roman', Times, serif;">Register</button>
+                    <div class="register-link">
+                        <p>
+                            Already have an account? <a href="Login.html" style="color: rgb(122, 50, 42);">Login</a>
+                        </p>
+                    </div>
+        </form>
+  </div> 
+  <div class="header">
+    <div class="logo">Florence</div>
+    <div class="menu">
+        <a href="home.html">Home</a>
+        <a href="home.html#about">About</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="Login.html">Login / Register</a>
+
+    </div>
+</div> 
+</body>
+</html>

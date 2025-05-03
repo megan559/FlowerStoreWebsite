@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('./assets/web.png') no-repeat center/cover;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            color: #f7f5f5;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #b8929a;
+            margin: 10px auto;
+            border-radius: 5px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 23px;
+            height: 600px;
+        }
+
+        .product-card {
+            position: relative;
+            width: 300px;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(100px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.2s; }
+        .product-card:nth-child(2) { animation-delay: 0.4s; }
+        .product-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .product-card:nth-child(1) .product-info { animation-delay: 0.4s; }
+        .product-card:nth-child(2) .product-info { animation-delay: 0.6s; }
+        .product-card:nth-child(3) .product-info { animation-delay: 0.8s; }
+
+        button {
+            background-color: #760d0d;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'Georgia', serif;
+        }
+
+        button:hover {
+            background-color: #ff5277;
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Our Products</h1>
+
+    <div class="product-container">
+        <div class="product-card">
+            <video src="./assets/b.mp4" loop muted></video>
+            <div class="product-info">
+                <h3 style=" font-family: 'Georgia', serif;">Bouquets</h3>
+                <p style="font-family: garamond, serif; font-size: 20px;">Bright and colorful, bringing joy to any space.</p>
+                <button><a href="Bouquet.html" style="text-decoration: none; color: white;">Explore More</a></button>
+            </div>
+        </div>
+        <div class="product-card">
+            <video src="./assets/speacial2.mp4" loop muted></video>
+            <div class="product-info">
+                <h3 style=" font-family: 'Georgia', serif;">Eternal Roses</h3>
+                <p style="font-family: garamond, serif; font-size: 20px;">Elegant and timeless, perfect for any occasion.</p>
+                <button><a href="eternal.html" style="text-decoration: none; color: white;">Explore More</a></button>
+            </div>
+        </div>
+        <div class="product-card">
+            <video src="./assets/special.mp4" loop muted></video>
+            <div class="product-info">
+                <h3 style=" font-family: 'Georgia', serif;">Orchids</h3>
+                <p style="font-family: garamond, serif; font-size: 20px;">Graceful and fragrant, a symbol of purity.</p>
+                <button><a href="orchids.html" style="text-decoration: none; color: white;">Explore More</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.product-card video').forEach(video => {
+            video.addEventListener('mouseover', () => video.play());
+            video.addEventListener('mouseout', () => video.pause());
+        });
+    </script>
+
+</body>
+</html>

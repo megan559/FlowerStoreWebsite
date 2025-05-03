@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgb(0, 0, 0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgb(78, 12, 12);
+            border-radius: 10px;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 50px 50px;
+        }
+
+        .content {
+            max-width: 50%;
+        }
+
+        .content h1, .content p, .btn {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            animation-delay: 0.5s;
+        }
+
+        .content p {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            animation-delay: 1s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgb(78, 12, 12);
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: 0.3s;
+            animation-delay: 1.5s;
+        }
+
+        .btn:hover {
+            background: rgb(124, 22, 22);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 50px;
+            position: relative;
+        }
+
+        .about-section::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: url('https://cdn.pixabay.com/photo/2016/04/13/18/55/flower-1321561_1280.png') no-repeat center/cover;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            max-width: 60%;
+            line-height: 1.6;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .shop-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgb(78, 12, 12);
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: rgb(124, 22, 22);
+        }
+
+        .header {
+            width: 100%;
+            background: rgba(94, 40, 40, 0.7); 
+            backdrop-filter: blur(5px); 
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: none;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 1s forwards 0.5s;
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            color: white; 
+            padding: 10px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLogo 1s forwards 1s;
+        }
+
+        @keyframes slideInLogo {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            margin-right: 100px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: rgb(254, 254, 254);
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s;
+            font-family: 'Times New Roman', Times, serif;
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        .menu a:nth-child(1) { animation: slideInMenu 1s forwards 0.8s; }
+        .menu a:nth-child(2) { animation: slideInMenu 1s forwards 1s; }
+        .menu a:nth-child(3) { animation: slideInMenu 1s forwards 1.2s; }
+        .menu a:nth-child(4) { animation: slideInMenu 1s forwards 1.4s; }
+        .menu a:nth-child(5) { animation: slideInMenu 1s forwards 1.6s; }
+
+        @keyframes slideInMenu {
+            0% { transform: translateY(-30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .menu a:hover {
+            color: #d4af37; 
+            transform: scale(1.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUpIframe 1s forwards 1.5s;
+        }
+
+        @keyframes slideUpIframe {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="./assets/flowers.mp4" type="video/mp4">
+    </video>
+    
+    <div class="container" id="home">
+        <div class="content">
+            <h1>Blooming Beauty, <br>Delivered Fresh!</h1>
+            <p>From vibrant bouquets to elegant arrangements, we handpick the <br>finest flowers to brighten your day. Let us help you express your <br>feelings with the perfect floral gift.</p>
+            <a href="#about" class="btn">About Us</a>
+        </div>  
+    </div>
+    
+    <div class="about-section" id="about">
+        <h2>About Us</h2>
+        <p>At Florence, we are passionate about bringing beauty into people's lives through the elegance of flowers. We carefully curate our bouquets to ensure the freshest, most vibrant arrangements, perfect for any occasion.</p>
+        <a href="products.html" class="shop-btn">Shop Now</a>
+    </div>
+    <div class="header">
+        <div class="logo">Florence</div>
+        <div class="menu">
+            <a href="home.html">Home</a>
+            <a href="home.html#about">About</a>
+            <a href="products.html">Shop</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="Login.html">Login / Register</a>
+
+        </div>
+    </div>
+</body>
+</html>
