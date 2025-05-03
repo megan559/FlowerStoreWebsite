@@ -10,7 +10,6 @@ Welcome to the **Flower Store Website** repository! This is a beautifully design
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
-- [Usage](#usage)
 
 ---
 
